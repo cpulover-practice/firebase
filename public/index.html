@@ -8,6 +8,7 @@
 </head>
 
 <body>
+  <h1>Authentication</h1>
   <form method="post" id="signUpForm">
     <input type="text" name="email" placeholder="Email">
     <input type="password" name="password" placeholder="Password">
@@ -27,6 +28,10 @@
   <button  id="signInAnonymouslyButton">Sign in anonymously</button>
   <br><br>
   <button id="signOutButton">Sign out</button>
+  <hr>
+
+  <h1>Firestore</h1>
+  
 
   <script defer src="/__/firebase/7.18.0/firebase-app.js"></script>
   <!-- include only the Firebase features as you need -->
@@ -41,6 +46,7 @@
   <!-- Custom scripts -->
   <script defer src="js/app.js"></script>
   <script defer src="js/auth.js"></script>
+  <script defer src="js/firestore.js"></script>
 
 </body>
 
