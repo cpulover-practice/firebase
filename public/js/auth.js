@@ -1,5 +1,10 @@
 //Setup (enable) sign-in methods on the website console first
 const googleProvider = new firebase.auth.GoogleAuthProvider();
+const facebookProvider = new firebase.auth.FacebookAuthProvider();
+facebookProvider.addScope('user_birthday');
+facebookProvider.setCustomParameters({
+    'display': 'popup'
+  });
 
 
 signUpFormRef.addEventListener('submit', (e) => {
@@ -18,10 +23,20 @@ signInFormRef.addEventListener('submit', (e) => {
     resetForms();
 });
 
-signInGoogleButton.addEventListener('click', function(){
-    signInGoogle();
-    resetForms();
-});
+signInProviderButtons.forEach(signInProviderButton => {
+    signInProviderButton.addEventListener('click', function(){
+        switch(signInProviderButton.id){
+            case 'google':
+                signInProvider(googleProvider);
+                break;
+            case 'facebook':
+                signInProvider(facebookProvider);
+                break;
+            default:
+        }
+        resetForms();
+    });
+})
 
 signOutButton.addEventListener('click', function(){
     signOut();
@@ -61,8 +76,8 @@ function signInEmailPassword(email,password) {
     );
 }
 
-function signInGoogle() {
-    authRef.signInWithPopup(googleProvider)
+function signInProvider(provider) {
+    authRef.signInWithPopup(provider)
         .then(result => {
             console.log("Sign in successfully!");
             var token = result.credential.accessToken;

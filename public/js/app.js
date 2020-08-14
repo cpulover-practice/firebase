@@ -9,9 +9,11 @@ const storageRef = firebase.storage();
 const signUpFormRef= document.querySelector('#signUpForm');
 const signInFormRef= document.querySelector('#signInForm');
 const signOutButton = document.querySelector('#signOutButton');
-const signInGoogleButton = document.querySelector('#signInGoogleButton');
+const signInProviderButtons = document.querySelectorAll('.signInProviderButton');
 
-
+/* CONFIGURATIONS */
+// To apply the default browser preference instead of explicitly setting it.
+authRef.useDeviceLanguage();
 
 
 
