@@ -38,6 +38,11 @@ signInProviderButtons.forEach(signInProviderButton => {
     });
 })
 
+signInAnonymouslyButton.addEventListener('click', function(){
+    signInAnomymously();
+    resetForms();
+});
+
 signOutButton.addEventListener('click', function(){
     signOut();
     resetForms();
@@ -104,6 +109,20 @@ function signUpEmailPassword(email, password) {
             console.log("Sign up unsuccessfully!");
             console.log(error.code);
             console.log(error.message);
+        }
+    );
+};
+
+function signInAnomymously(){
+    authRef.signInAnonymously()
+        .then(function() {
+            console.log('Logged in as Anonymous!')
+        })
+        .catch(function(error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log(errorCode);
+            console.log(errorMessage);
         }
     );
 };

@@ -10,6 +10,7 @@ const signUpFormRef= document.querySelector('#signUpForm');
 const signInFormRef= document.querySelector('#signInForm');
 const signOutButton = document.querySelector('#signOutButton');
 const signInProviderButtons = document.querySelectorAll('.signInProviderButton');
+const signInAnonymouslyButton = document.querySelector('#signInAnonymouslyButton');
 
 /* CONFIGURATIONS */
 // To apply the default browser preference instead of explicitly setting it.
