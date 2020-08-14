@@ -1,15 +1,19 @@
-var authRef = firebase.auth();
-var functionRef = firebase.functions();
-var firestoreRef = firebase.firestore();
-var databaseRef = firebase.database();
-var storageRef = firebase.storage();
+/* FIREBASE SERVICE REFERENCES */
+const authRef = firebase.auth();
+const functionRef = firebase.functions();
+const firestoreRef = firebase.firestore();
+const databaseRef = firebase.database();
+const storageRef = firebase.storage();
 
-// console.log(authRef);
-// console.log(functionRef);
-// console.log(firestoreRef);
-// console.log(databaseRef);
-// console.log(storageRef);
-// console.log(firebase);
+/* ELEMENT REFERENCES */
+const signUpFormRef= document.querySelector('#signUpForm');
+const signInFormRef= document.querySelector('#signInForm');
+const signOutButton = document.querySelector('#signOutButton');
+const signInGoogleButton = document.querySelector('#signInGoogleButton');
+
+
+
+
 
 
 
